@@ -1,0 +1,222 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+#wrap-document{
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#article{
+    position: absolute;
+    background-color: #fff;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    z-index: 5;
+    transition: .45s ease-in-out;
+    border: 0px
+}
+#on-btn:checked ~ #article{
+    transform: rotateZ(-15deg);
+}
+.temp-row{
+    display: flex;
+    width: 100%;
+    height: 50%
+}
+.temp-cell{
+    width: calc( 100% - 60px );
+    height: calc( 100% - 100px );
+    background-color: #333;
+    padding: 50px 30px;
+}
+.image{
+    width: 100%;
+}
+#on-btn, #off-btn{
+    z-index: 10;
+    position: inherit;
+    cursor: pointer;
+}
+
+.main-cell{
+    background-color: #fff;
+}
+
+h2{
+    font-size: 2em;
+}
+#small-title{
+    font-size: smaller;
+    font-style: italic !important;
+    margin-bottom: 20px;
+}
+p{
+    line-height: 1.5;
+    letter-spacing: 0.8px;
+    padding-bottom: 40px;
+}
+h4{
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+#article::after{
+    position: absolute;
+    background-color: #333;
+    content: '';
+    z-index:1;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    bottom: calc( -100% + 1px )
+}
+
+#rotate-btns{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ff7979;
+    z-index: 20;
+    position: fixed;
+    top: calc( 0px );
+    left: 0px;
+    transform: translate(-40%, -40%);
+    transition: .45s ease-in-out;
+}
+
+h2{
+    padding-top: 100px;
+}
+
+#on-btn-label{
+    width:30px;
+    height:30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    cursor: pointer;
+}
+span{
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+
+#on-btn:checked ~ #rotate-btns{
+    transform: translate(-40%, -40%) rotateZ(-90deg);
+}
+
+#label1{
+    position: absolute;
+    top: 130px;
+    width: 30px;
+    height: 30px;
+    left: 130px;
+}
+
+input{
+    display: none;
+}
+
+#label2 {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 120px;
+    left: 40px;
+    cursor: pointer;
+}
+#on-btn-label{
+    width: 100%;
+    height: 100%;
+}
+#label2>span:nth-child(1){
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height:5px;
+    top: 50%;
+    transform: translateY(-50%) rotateZ(45deg);
+}
+#label2>span:nth-child(2){
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height:5px;
+    top: 50%;
+    transform: translateY(-50%) rotateZ(-45deg);
+}
+
+.navigation{
+    width: fit-content;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 30px;
+    transition: .45s ease-in-out;
+}
+svg{
+    margin-right: 20px;
+    width: 22px;
+    height: 22px;
+}
+
+#navigation1{
+    bottom: 150px;
+    z-index: 30;
+    color: #fff;
+    left: -110%;
+}
+#navigation1 p,
+#navigation2 p,
+#navigation3 p{
+    color: #fff;
+    padding: 0px;
+    font-size: 20px;
+}
+
+#navigation2{
+    bottom: 110px;
+    z-index: 30;
+    color: #fff;
+    left: -110%;
+}
+#navigation3{
+    bottom: 70px;
+    z-index: 30;
+    color: #fff;
+    left: -110%;
+}
+
+#on-btn:checked ~ #navigation1{
+    left: 30px;
+}
+#on-btn:checked ~ #navigation2{
+    left: 38px;
+}
+#on-btn:checked ~ #navigation3{
+    left: 46px;
+}
+
+@media screen and  ( max-width : 570px ) {
+    #on-btn:checked ~ #article{
+        transform: rotateZ(-10deg);
+    }
+    .navigation{
+        position: absolute;
+    }
+}
+#temp-block{
+    padding-top: 100px;
+    padding-bottom: 220px;
+}
+
